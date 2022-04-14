@@ -10,7 +10,7 @@ export const CallToAction = () => {
       <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="md:ml-auto md:w-1/2 md:pl-10">
           <h2 className="text-base font-semibold uppercase tracking-wider ">
-            Dragin'Mixin
+            Dragin&lsquo;Mixin
           </h2>
           <p className="mt-2  text-3xl font-extrabold tracking-tight sm:text-4xl">
             The best cocktails!

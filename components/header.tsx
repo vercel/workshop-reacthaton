@@ -9,7 +9,7 @@ export default function Header() {
         <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
           <div className="flex items-center">
             <Link href="/">
-              <a className="text-3xl text-white">Dragin'Mixin!</a>
+              <a className="text-3xl text-white">Dragin&lsquo;Mixin!</a>
             </Link>
             <div className="hidden ml-10 space-x-8 lg:block">
               {navigation.map((link) => (
