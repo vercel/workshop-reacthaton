@@ -5,8 +5,8 @@ const NEXT_PUBLIC_SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY;
 const NEXT_PUBLIC_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
 export const supabase = createClient(
-  NEXT_PUBLIC_SUPABASE_KEY ?? "",
-  NEXT_PUBLIC_SUPABASE_URL ?? ""
+  NEXT_PUBLIC_SUPABASE_URL ?? "",
+  NEXT_PUBLIC_SUPABASE_KEY ?? ""
 );
 
 export const database = {
@@ -17,12 +17,11 @@ export const database = {
    */
   recipes: async () => {
     try {
-      const { data: recipes } = await supabase
-        .from<Recipe[]>("recipes")
-        .select("*");
-      return recipes;
+      const { data } = await supabase.from<Recipe>("recipes").select("*");
+
+      return data;
     } catch (err) {
-      console.log(err);
+      console.log("error", err);
     }
   },
   /**
@@ -36,12 +35,14 @@ export const database = {
       const { data: recipe } = await supabase
         .from<Recipe>("recipes")
         .select("*")
-        .eq("id", id);
+        .eq("id", id)
+        .single();
       return recipe;
     } catch (err) {
       console.log(err);
     }
   },
+
   /**
    *
    * @param recipeId the id of the recipe to get comments for
@@ -51,7 +52,7 @@ export const database = {
   comments: async (recipeId: string) => {
     try {
       const { data: comments } = await supabase
-        .from<Comment[]>("comments")
+        .from<Comment>("comments")
         .select("*")
         // @ts-ignore
         .eq("recipe_id", recipeId);
@@ -60,6 +61,7 @@ export const database = {
       console.log(err);
     }
   },
+
   /**
    *
    * @param comment the comment to add
@@ -71,7 +73,6 @@ export const database = {
       await supabase.from<Comment>("comments").insert(comment);
       return true;
     } catch (err) {
-      return false;
       console.log(err);
     }
   },

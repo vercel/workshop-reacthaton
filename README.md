@@ -54,6 +54,8 @@ In a Next page, you have 3 ways to get data:
 
 Your mission is now to get all the recipes and render them in a list in [recipes.tsx](./pages/recipes.tsx). Keep things simple to start, we can get back later to make this more pretty!
 
+When you are done rendering the list of recipes, make each recipe link to an unique page for that recipe use [Next.js](Next)
+
 ### **Task 3: Dynamic routes**
 
 After you have a list of all the recipes working, we need now to give users more details about each!
