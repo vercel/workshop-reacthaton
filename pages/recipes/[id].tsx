@@ -1,12 +1,13 @@
 import type { GetServerSideProps, NextPage } from "next";
 import { Layout } from "../../components/layout";
-import { Recipe } from "../../types";
+import { Comment, Recipe } from "../../types";
 
 type Props = {
   recipe: Recipe;
+  comments: Comment[];
 };
 
-const Recipe: NextPage<Props> = ({ recipe }) => {
+const Recipe: NextPage<Props> = ({ recipe, comments }) => {
   return <Layout>{}</Layout>;
 };
 
@@ -22,8 +23,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   }
-
-  // data fetching will go here
 
   return {
     props: {},
