@@ -12,6 +12,8 @@ This is a tall order, but luckily we have a lot of tools at our disposal! Let's 
 - A [Database object](./lib/database.ts), which contains different methods to call if you want to get the recipes.
 - A [Types file](./types.ts), where you can read about the format of the data. These types are also attached to the database object for convenient code completion!
 
+There are various other React components you can use if you don't want to create your own.
+
 ## Your mission
 
 The drag queen convention is soon coming to town and we need to give the mixologist a recipe list of the best cocktails!

@@ -13,5 +13,4 @@ export interface Comment {
   content: string;
   author: string;
   recipe_id: string;
-  recipes?: Recipe;
 }
