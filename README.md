@@ -11,8 +11,7 @@ This is a tall order, but luckily we have a lot of tools at our disposal! Let's 
 - A [Layout component](./components/layout.tsx) rendering our Header. This is useful to reuse in all your pages.
 - A [Database object](./lib/database.ts), which contains different methods to call if you want to get the recipes.
 - A [Types file](./types.ts), where you can read about the format of the data. These types are also attached to the database object for convenient code completion!
-
-There are various other React components you can use if you don't want to create your own.
+- Various React components you can use if you don't want to create your own.
 
 ## Your mission
 
@@ -25,7 +24,7 @@ Your job will be to complete the feature list in this application:
 - Way to leave comments on a recipe.
 - Way to see comments on a recipe and vote on it.
 
-To achieve success, split your work in two phases!
+To achieve success, split your work in two phases! Make sure you take the time to read the relevant documentation given in each step.
 
 ## Workshop part 1:
 
@@ -56,7 +55,13 @@ In a Next page, you have 3 ways to get data:
 
 Your mission is now to get all the recipes and render them in a list inside [recipes.tsx](./pages/recipes.tsx). Keep things simple to start. We can get back later to make this more pretty!
 
-### **Task 3: Dynamic routes**
+### **Task 3: Routing and Navigation**
+
+Now that can see recipes users should be able to navigate to a recipe details page. Make sure each recipe is a link to the page showing the details of the recipe.
+
+You can use [Next/Link](https://nextjs.org/docs/api-reference/next/link) in order to make this work! Don't worry if the recipe details page is now yet working.
+
+### **Task 4: Dynamic routes**
 
 After you have a list of all the recipes working, we now need to give users more details about each!
 
@@ -65,14 +70,6 @@ For this, we will use [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-r
 Inside [[id.tsx]](./pages/recipes/%5Bid%5D.tsx), you are now tasked with fetching the right recipe and render it in the page! Read about [getServerSideProps](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props).
 
 **Hint: Look at Dynamic Params in the docs!**
-
-### **Task 4: Navigation**
-
-Next.js is awesome at making smooth transitions between pages. Your last task before the break is simple.
-
-In the [recipes.tsx](./pages/recipes.tsx) file, change each recipe into a link to the proper recipe page that we built in Task 3.
-
-**Hint: Use next/link to do so**: [Link to the next/link docs](https://nextjs.org/docs/api-reference/next/link)
 
 ## End of Part 1!
 
@@ -102,3 +99,11 @@ In each [[id].tsx](./pages/recipes/%5Bid%5D.tsx) file, make a comments section u
 If you made it this far, you should be pretty comfortable already with the concepts seen so far. Now go ahead and venture on your own!
 
 Make a component that lets users add new comments to the recipes!
+
+### **Bonus!**
+
+If you feel like exploring things a little bit further, try these:
+
+- Change the recipe details page to use SSG and [getStaticPaths](https://nextjs.org/docs/basic-features/data-fetching/get-static-paths). Fetch the comments with ISR!
+- implement like/unlike feature on reach recipe
+- Make a section to submit new recipes.
