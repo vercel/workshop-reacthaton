@@ -8,7 +8,7 @@ export interface Recipe {
 }
 
 export interface Comment {
-  id: number;
+  id?: number;
   created_at?: string;
   content: string;
   author: string;
