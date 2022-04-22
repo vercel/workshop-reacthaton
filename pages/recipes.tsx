@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { Layout } from "../components/layout";
 import { RecipeList } from "../components/RecipeList";
+import { database } from "../lib/database";
 import { Recipe } from "../types";
 
 type Props = {
@@ -18,3 +19,13 @@ const Recipes: NextPage<Props> = ({ recipes }) => {
 };
 
 export default Recipes;
+
+export const getStaticProps = async () => {
+  const recipes = await database.recipes();
+
+  return {
+    props: {
+      recipes,
+    },
+  };
+};

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { database } from "../lib/database";
 import { Recipe } from "../types";
 
 type Props = {
@@ -12,7 +13,7 @@ export const RecipeList: React.VFC<Props> = ({ recipes }) => {
         {recipes.map((recipe) => (
           <li key={recipe.id} className="py-5">
             <Link href={`/recipes/${recipe.id}`}>
-              <div className="relative focus-within:ring-2 focus-within:ring-indigo-500">
+              <div className="relative focus-within:ring-2 focus-within:ring-indigo-500 cursor-pointer">
                 <h3 className="text-sm font-semibold text-gray-800">
                   <p className="hover:underline focus:outline-none">
                     <span className="absolute inset-0" aria-hidden="true" />

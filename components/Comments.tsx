@@ -1,3 +1,4 @@
+import { SyntheticEvent, useState } from "react";
 import type { Comment } from "../types";
 
 type Props = {
@@ -40,23 +41,7 @@ export const Comments: React.VFC<Props> = ({ comments }) => {
         </div>
         <div className="bg-gray-50 px-4 py-6 sm:px-6">
           <div className="flex space-x-3">
-            <div className="min-w-0 flex-1">
-              <form action="#">
-                <div>
-                  <label htmlFor="comment" className="sr-only">
-                    Comment
-                  </label>
-                  <textarea
-                    id="comment"
-                    name="comment"
-                    rows={3}
-                    className="shadow-sm block w-full focus:ring-blue-500 focus:border-blue-500 sm:text-sm border border-gray-300 rounded-md"
-                    placeholder="Add a comment"
-                    defaultValue={""}
-                  />
-                </div>
-              </form>
-            </div>
+            <div className="min-w-0 flex-1"></div>
           </div>
         </div>
       </div>
