@@ -8,9 +8,9 @@ Our goal will be to work with this base application and use all of the most inte
 
 This is a tall order, but luckily we have a lot of tools at our disposal! Let's explore what we have already in this repo:
 
-- A [Layout component](./components/layout.tsx) rendering our Header. This is useful to reuse in all your pages.
-- A [Database object](./lib/database.ts), which contains different methods to call if you want to get the recipes.
-- A [Types file](./types.ts), where you can read about the format of the data. These types are also attached to the database object for convenient code completion!
+- A [Layout component](./src/components/layout.tsx) rendering our Header. This is useful to reuse in all your pages.
+- A [Database object](./src/lib/database.ts), which contains different methods to call if you want to get the recipes.
+- A [Types file](./src/types.ts), where you can read about the format of the data. These types are also attached to the database object for convenient code completion!
 - Various React components you can use if you don't want to create your own.
 
 ## Your mission
@@ -32,7 +32,7 @@ We will give a quick lecture on the Next.js features you need to know for the fi
 
 ### **Task 1: Setup the environment variables to connect to Supabase.**
 
-You will receive two environment variables that are to be consumed by Supabase. Make sure you load them in the application. The name of the variables are in the [database.ts file](./lib/database.ts).
+You will receive two environment variables that are to be consumed by Supabase. Make sure you load them in the application. The name of the variables are in the [database.ts file](./src/lib/database.ts).
 
 Follow the [documentation](https://nextjs.org/docs/basic-features/environment-variables) if you are not sure how to do this.
 
@@ -45,7 +45,7 @@ npm run dev
 
 ### **Task 2: Display recipes!**
 
-Once you have the application running, we need to get data! In the [recipes.tsx](./pages/recipes.tsx), there is not much for now. It is your job to get the data into this page.
+Once you have the application running, we need to get data! In the [recipes.tsx](./src/pages/recipes.tsx), there is not much for now. It is your job to get the data into this page.
 
 In a Next page, you have 3 ways to get data:
 
@@ -53,7 +53,7 @@ In a Next page, you have 3 ways to get data:
 - Using the [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) function (**recommended**).
 - Using the [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) function.
 
-Your mission is now to get all the recipes and render them in a list inside [recipes.tsx](./pages/recipes.tsx). Keep things simple to start. We can get back later to make this more pretty!
+Your mission is now to get all the recipes and render them in a list inside [recipes.tsx](./src/pages/recipes.tsx). Keep things simple to start. We can get back later to make this more pretty!
 
 ### **Task 3: Routing and Navigation**
 
@@ -67,7 +67,7 @@ After you have a list of all the recipes working, we now need to give users more
 
 For this, we will use [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes). There are ways to do this in conjunction with `getStaticProps`, but we will be using `getServerSideProps` instead to climb one step at a time!
 
-Inside [[id.tsx]](./pages/recipes/%5Bid%5D.tsx), you are now tasked with fetching the right recipe and render it in the page! Read about [getServerSideProps](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props).
+Inside [[id.tsx]](./src/pages/recipes/%5Bid%5D.tsx), you are now tasked with fetching the right recipe and render it in the page! Read about [getServerSideProps](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props).
 
 **Hint: Look at Dynamic Params in the docs!**
 
@@ -86,7 +86,7 @@ We expect our drag queen convention to be a huge event. COVID be damned, the que
 
 This means that we will have a lot of comments coming in for our cocktail recipes. Under each recipe, you should now use the [SWR package](https://swr.vercel.app/) in order to get a really optimized fetching experience!
 
-In each [[id].tsx](./pages/recipes/%5Bid%5D.tsx) file, make a comments section under the recipe. Limit it to the last 10 comments.
+In each [[id].tsx](./src/pages/recipes/%5Bid%5D.tsx) file, make a comments section under the recipe. Limit it to the last 10 comments.
 
 **Hint: SWR does not need to get the fetch function as a fetcher**
 
